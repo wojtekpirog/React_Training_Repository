@@ -1,14 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./App.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const myName = "Wojciech";
+const mySurname = "Piróg";
+const nowObject = new Date(); // Date() jest obiektem
+const year = nowObject.getFullYear();
+const month = nowObject.getMonth(); // .getMonth() zwraca liczbę od 0 do 11
+const dayOfMonth = nowObject.getDate();
+const hours = nowObject.getHours();
+const minutes = nowObject.getMinutes();
+const seconds = nowObject.getSeconds();
+
+ReactDOM.render(
+  <div>
+    <h1>React Sandbox Repository</h1>
+    <p>Created by: {myName.charAt(0).toUpperCase() + myName.slice(1).toLowerCase()} {mySurname.charAt(0).toUpperCase() + mySurname.slice(1).toLowerCase()}</p>
+    <p>Published at: {`${year}/${month + 1}/${dayOfMonth} ${hours}:${minutes}:${seconds}`}</p>
+    <p>Current temperature: 22<span className="degSign">&deg;C</span></p>
+    <p>Pir<span className="redTxt">Dev</span><span className="regSign"><sup>&reg;</sup></span> {nowObject.getFullYear()}</p>
+  </div>,
+  document.querySelector("#root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
