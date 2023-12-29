@@ -1,26 +1,51 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+// import "./App.css";
 import "./App.css";
 
 const rootContainer = document.querySelector("#root");
 const root = createRoot(rootContainer);
 
-const myName = "Wojciech";
-const mySurname = "Piróg";
-const nowObject = new Date(); // Date() jest obiektem
-const year = nowObject.getFullYear();
-const month = nowObject.getMonth(); // .getMonth() zwraca liczbę od 0 do 11
-const dayOfMonth = nowObject.getDate();
-const hours = nowObject.getHours();
-const minutes = nowObject.getMinutes();
-const seconds = nowObject.getSeconds();
+const img = "https://picsum.photos/seed/picsum/200/300";
+
+const customStyles = {
+  color: "royalblue",
+  fontSize: "30px",
+  borderBottom: "2px solid tomato"
+};
+
+const galleryStyles = {
+  display: "flex",
+  marginTop: "20px"
+};
+
+const imgBoxStyles = {
+  width: "200px",
+  height: "200px",
+  overflow: "hidden",
+  margin: "10px"
+};
+
+const imgStyles = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  filter: "grayscale(100%)"
+};
 
 root.render(
-  <div>
-    <h1>React Sandbox Repository</h1>
-    <p>Created by: {myName.charAt(0).toUpperCase() + myName.slice(1).toLowerCase()} {mySurname.charAt(0).toUpperCase() + mySurname.slice(1).toLowerCase()}</p>
-    <p>Published at: {`${year}/${month + 1}/${dayOfMonth} ${hours}:${minutes}:${seconds}`}</p>
-    <p>Current temperature: 22<span className="degSign">&deg;C</span></p>
-    <p>Pir<span className="redTxt">Dev</span><span className="regSign"><sup>&reg;</sup></span> {nowObject.getFullYear()}</p>
-  </div>
+  <React.Fragment>
+    <h1 style={customStyles}>🧑‍💻React Sandbox Repository🧑‍💻</h1>
+    <div class="gallery" style={galleryStyles}>
+      <div class="imgBox" style={imgBoxStyles}>
+        <img src={img} style={imgStyles} alt="random" />
+      </div>
+      <div class="imgBox" style={imgBoxStyles}>
+        <img src={img} style={imgStyles} alt="random" />
+      </div>
+      <div class="imgBox" style={imgBoxStyles}>
+        <img src={img} style={imgStyles} alt="random" />
+      </div>
+    </div>    
+  </React.Fragment>
 );
