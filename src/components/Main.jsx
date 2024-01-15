@@ -1,21 +1,11 @@
-import Card from "./Card";
-import cars from "../data/cars";
+import data from "../data/data";
+import CardContainer from "./CardContainer";
 
 function Main() {
   return (
     <main>
-      {cars.map((car, index) => (
-        <Card
-          key={index}
-          brand={car.brand}
-          model={car.model}
-          imgUrl={car.imgUrl}
-          yearOfProduction={car.yearOfProduction}
-          horsePower={car.horsePower}
-          altText={car.altText}
-        />
-      ))}
-    </main>
+      <CardContainer />   
+    </main>    
   );
 }
 

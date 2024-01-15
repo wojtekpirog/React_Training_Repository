@@ -1,14 +1,11 @@
-function Card({brand, model, imgUrl, yearOfProduction, horsePower, altText}) {
+function Card({id, emoji, name, meaning}) {
   return (
-    <div className="card">
-      <div className="top">
-        <h3 className="name">🚗 {brand} {model} 🚗</h3>
-        <img className="circle-img" src={imgUrl} alt={altText} title={altText} />
-      </div>
-      <div className="bottom">
-        <p className="info">Year of production: {yearOfProduction}</p>
-        <p className="info">Engine power: {horsePower}</p>
-      </div>        
+    <div data-id={id} className="card">
+      <dt>
+        <span className="emoji" role="img" aria-label="Tense Biceps" style={{fontSize: "400%"}}>{emoji}</span>
+        <span>{name}</span>
+      </dt>
+      <dd>{meaning}</dd>
     </div>
   );
 }
