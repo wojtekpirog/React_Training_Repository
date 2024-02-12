@@ -1,26 +1,23 @@
-import { useState, useEffect } from "react";
 import PageHeading from "./PageHeading";
-import Main from "./Main";
+import Input from "./Input";
+import Button from "./Button";
+import ListHeading from "./ListHeading";
+import Paragraph from "./Paragraph";
+import TaskList from "./TaskList";
 
 export default function App() {
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
-
-  async function getAdvice() {
-    const response = await fetch("https://api.adviceslip.com/advice");
-    const data = await response.json();
-    setAdvice(data.slip.advice);
-    setCount(count + 1);
-  }
-
-  useEffect(() => {
-    getAdvice();
-  }, []);
-
   return (
-    <div>
-      <PageHeading />
-      <Main onClickFunction={getAdvice} advice={advice} count={count} />
+    <div className="container">
+      <div className="header">
+        <PageHeading />
+        <Input className="todo-input" placeholder="Enter task's name" />
+        <Button className="add-btn" text="Add" />
+      </div>
+      <div className="todo-list">
+        <ListHeading />
+        <Paragraph className="error-info" />
+        <TaskList />
+      </div>
     </div>
   );
 }

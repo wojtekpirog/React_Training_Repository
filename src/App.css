@@ -6,47 +6,82 @@
   box-sizing: border-box;
 }
 
+:root {
+  --almost-black: #1f2223;
+  --light-green: #2ec2b0;
+  --light: #dfe6e9;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Montserrat", sans-serif;
-  padding: 25px;
-  background-color: #1f2223;
+  background-color: var(--almost-black);
+}
+
+.container {
+  width: 600px;
+  background-color: var(--light);
   text-align: center;
+  border-radius: 1rem;
+}
+
+.header {
+  padding: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(150deg, #045DE9 0%, #09C6F9 100%);
 }
 
 h1 {
+  color: var(--light);
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: #dfe6e9;
-  margin-bottom: 1.6rem;
+  line-height: 1;
 }
 
-.getAdviceButton {
+.todo-input {
+  width: 80%;
   padding: 1rem 2rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #dfe6e9;
-  background-color: #2ec2b0;
+  margin: 2rem 1rem 0 0;
   border: none;
-  border-radius: 0.5rem;
+  outline: none;
+  border-radius: .5rem;
+  background-color: var(--light);
+}
+
+.add-btn {
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: .5rem;
+  background-color: var(--light);
+  color: var(--light-green);
+  font-weight: 600;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: color .2s, background-color .2s;
 }
 
-.advice {
-  margin-top: 1.6rem;
+.todo-list {
+  padding: 2rem 0;
+}
+
+.todo-list h2 {
+  color: var(--light-green);
   font-size: 2rem;
-  color: #2ec2b0;
 }
 
-.adviceCount {
-  margin-top: 1.6rem;
-  font-size: 1.6rem;
-  color: #2ec2b0;
+.add-btn:hover {
+  background-color: var(--almost-black);
 }
+
 
 @media only screen and (min-width: 576px) {
   h1 {
