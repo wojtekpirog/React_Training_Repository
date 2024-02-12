@@ -1,12 +1,11 @@
-import data from "../data/data";
-import CardContainer from "./CardContainer";
+import Button from "./Button";
+import Advice from "./Advice";
 
-function Main() {
+export default function Main(props) {
   return (
     <main>
-      <CardContainer />   
+      <Button onClickFunction={props.onClickFunction} />   
+      <Advice advice={props.advice} count={props.count} />
     </main>    
   );
 }
-
-export default Main;

@@ -1,84 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  margin: 0 auto;
   padding: 25px;
   background-color: #1f2223;
   text-align: center;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
   color: #dfe6e9;
-  margin: 0;
+  margin-bottom: 1.6rem;
 }
 
-h2 {
-  font-size: 3rem;
+.getAdviceButton {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #dfe6e9;
+  background-color: #2ec2b0;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.advice {
+  margin-top: 1.6rem;
+  font-size: 2rem;
   color: #2ec2b0;
 }
 
-.cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cardContainer > .card {
-  max-width: 320px;
-  min-height: 300px;
-  margin-bottom: 50px;
-  padding: 20px;
-  background-color: #dfe6e9;
-  transition: all 300ms ease-in-out;
-}
-
-.cardContainer > .card > dt {
-  margin-bottom: 20px;
+.adviceCount {
+  margin-top: 1.6rem;
+  font-size: 1.6rem;
   color: #2ec2b0;
-  line-height: 1;
-}
-
-.cardContainer > .card > dt > span {
-  font-weight: bold;
-  font-size: 200%;
-}
-
-span.emoji {
-  display: block;
-  padding: 0 0 10px;
-  font-size: 400%;
-}
-
-dd {
-  margin: 0;
 }
 
 @media only screen and (min-width: 576px) {
   h1 {
     font-size: 2.5rem;
   }
-  h2 {
-    font-size: 4rem;
-  }
-  .cardContainer {
-    flex-direction: row;
-    justify-content: space-evenly;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  .cardContainer > .card {
-    max-width: 360px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 3rem;
-  }
-  h2 {
-    font-size: 5rem;
   }
 }
 
