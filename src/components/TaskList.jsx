@@ -1,5 +1,9 @@
-export default function TaskList() {
+export default function TaskList(props) {
+  const { tasksArray } = props;
+
   return (
-    <ul></ul>
+    <ul>
+      {tasksArray.map(task => <li key={task.id}>{task.name}</li>)}
+    </ul>
   );
 }

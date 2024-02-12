@@ -1,4 +1,4 @@
 export default function Button(props) {
-  const { className, text } = props;
-  return <button className={className}>{text}</button>     
+  const { className, text, onClickFunction } = props;
+  return <button className={className} onClick={onClickFunction}>{text}</button>     
 }
