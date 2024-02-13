@@ -4,18 +4,31 @@ import Input from "./Input";
 import Button from "./Button";
 import ListHeading from "./ListHeading";
 import Paragraph from "./Paragraph";
-import TaskList from "./TaskList";
+import ToDoItem from "./ToDoItem";
 
 export default function App() {
+  const [error, setError] = useState("No tasks on the list");
   const [tasksArray, setTasksArray] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   function addTask() {
-    setTasksArray([...tasksArray, {id: tasksArray.length + 1, name: inputValue}]);
+    if (inputValue !== "") {
+      setTasksArray(prevTasks => [...prevTasks, {id: tasksArray.length + 1, name: inputValue}]);
+      setError("");
+      setInputValue("");
+    } else {
+      setError("Your task must have a name");
+    }    
   }
 
   function setTaskName(e) {
     setInputValue(e.target.value);
+  }
+
+  function deleteItem(id) {
+    // setTasksArray(prevTasks => );
+    setTasksArray(prevTasksArray => prevTasksArray.filter((task, index) => index !== id));
+    console.log("Delete item with id: " + id + "!");
   }
 
   return (
@@ -27,8 +40,10 @@ export default function App() {
       </div>
       <div className="todo-list">
         <ListHeading />
-        <Paragraph className="error-info" errorMessage={tasksArray.length === 0 && "No tasks on the list"} />
-        <TaskList tasksArray={tasksArray} />
+        <Paragraph className="error-info" errorMessage={error} />
+        <ul>
+          {tasksArray.map((task, index) => <ToDoItem key={index} id={index} name={task.name} onDoubleClick={deleteItem} />)}
+        </ul>
       </div>
     </div>
   );
